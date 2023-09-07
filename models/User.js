@@ -1,3 +1,5 @@
+// 4th: mern-infrastructure/models/users.js 
+
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 // Add the bcrypt library

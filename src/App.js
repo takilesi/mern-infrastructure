@@ -9,6 +9,7 @@ import NavBar from './components/NavBar/NavBar'
 // css
 import './App.css';
 import { getUser } from "./utilities/users-service";
+import CreateSong from './components/CreateSong/CreateSong'
 
 
 function App() {
@@ -22,7 +23,9 @@ function App() {
         <>
         <NavBar user={user} setUser={setUser}/>
         <Routes>
-          <Route path="/orders/new" element={<NewOrderPage />} />
+          {/* <Route path="/orders/new" element={<NewOrderPage />} /> */}
+           {/* song - url route , element is what renders */}
+          <Route path="/song" element={<NewOrderPage />} />
           <Route path="/orders/history" element={<OrderHistoryPage />} />
         </Routes>
         </>

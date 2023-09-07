@@ -1,3 +1,7 @@
+// 1st: mern-infrastructure/server.js
+
+// this page is root of the applicaiton 
+
 require('dotenv').config();
 require('./config/database')
 const express = require('express');
@@ -5,7 +9,6 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cors = require('cors'); 
-
 const app = express();
 
 app.use(logger('dev'));
@@ -20,6 +23,9 @@ app.use(require('./config/checkToken'));
 
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'));
+app.use('/api/song', require('./routes/api/song'));
+app.use('/api/songnotes', require('./routes/api/songnotes'));
+
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests
 app.get('/*', function(req, res) {
